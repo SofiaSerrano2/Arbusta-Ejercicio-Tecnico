@@ -1,11 +1,11 @@
+import UserView from "./pages/UserView/UserView";
+
 
 //Realizar un console.log() en cada item que debería navegar a una nueva pantalla.
 function App() {
   return (
-    <div>
-      
-    </div>
-  );
+      <UserView/>
+    );
 }
 
 export default App;

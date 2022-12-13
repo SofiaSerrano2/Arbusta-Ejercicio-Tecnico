@@ -1,10 +1,10 @@
 
-const Header=({children})=>{
+const Header=()=>{
     <header>
         <nav>
             <p></p>
         </nav>
-        {children}
+        
     </header>
 }
 export default Header;
