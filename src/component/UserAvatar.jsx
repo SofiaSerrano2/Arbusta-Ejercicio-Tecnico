@@ -1,4 +1,4 @@
-function UserAvatar() {
+const  UserAvatar=()=> {
     return ( 
         <h1>Avatar</h1>
      );

@@ -1,4 +1,4 @@
-function Input() {
+const Input = () =>{
     return ( 
         <label>
             <input type="text" />
