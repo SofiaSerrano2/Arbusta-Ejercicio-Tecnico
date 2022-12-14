@@ -1,7 +1,11 @@
 import Form from "../../component/Form";
 
 const UserDetail = () =>{
-        <Form/>
+    return(
+    <>
+      <Form/>
+    </>
+    )
 }
 
 export default UserDetail;

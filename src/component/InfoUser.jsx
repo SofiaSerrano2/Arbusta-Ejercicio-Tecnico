@@ -1,8 +1,7 @@
 const  InfoCard=()=> {
-    return ( 
-        <h1>Avatar</h1>
-
-    );
+    return(
+    <h1>Avatar</h1>
+    )
 }
 
 export default InfoCard;

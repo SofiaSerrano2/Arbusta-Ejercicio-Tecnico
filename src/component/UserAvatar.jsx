@@ -1,7 +1,9 @@
 const  UserAvatar=()=> {
-    return ( 
+   return(
+   <>
         <h1>Avatar</h1>
-     );
+    </>
+   )
 }
 
 export default UserAvatar;
