@@ -5,7 +5,7 @@ const Header=()=>{
             <img src='/assets/logo/logo_carrios_blue.png' alt="" />
         <nav>
         {/* Va a recorrer un json con los nombres de la página y su respectiva url */}
-          <p>Home</p>
+          <p className='text-blue'>Home</p>
           <p>Desafios</p>
           <p>Requisitos</p>
           <p>Beneficios</p>
