@@ -5,7 +5,7 @@ import UserView from "./pages/userView/UserView";
 function App() {
   return (
       <>
-            <UserView/>
+        <UserView/>
       </>
     );
 }

@@ -1,19 +1,14 @@
-import Header from "../../component/public/Header";
-import Footer from "../../component/public/Footer";
+
 import UserDetail from "./UserDetail";
+import Layout from "./Layout";
 
 const UserView = () =>{
     return(
-    <main>
-      <Header/>
-      <UserDetail/>
-      <Footer/>
-    </main>
-
+      <Layout>
+        <UserDetail/>
+      </Layout>
     )
 }
-
-   
 
 
 export default UserView;
