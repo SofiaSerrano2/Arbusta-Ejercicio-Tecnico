@@ -35,12 +35,12 @@
         {
           "id":3,
           "name": "whatsapp",
-          "img": "icon_whatsapp_white"
+          "img": "icon_whatsapp_white.svg"
         },
         {
           "id":4,
           "name": "youtube",
-          "img": "icon_youtube_white"
+          "img": "icon_youtube_white.svg"
         }
     ],
     "userDetail":[

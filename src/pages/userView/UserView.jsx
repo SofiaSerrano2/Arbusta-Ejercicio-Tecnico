@@ -1,6 +1,6 @@
 
 import UserDetail from "./UserDetail";
-import Layout from "./Layout";
+import Layout from "../../component/Layout";
 
 const UserView = () =>{
     return(
