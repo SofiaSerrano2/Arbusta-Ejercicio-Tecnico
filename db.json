@@ -1,0 +1,58 @@
+{
+    "navBar":[
+        {
+          "id":1,
+          "name": "Home"
+        },
+        {
+          "id":2,
+          "name": "Desafios"
+        },
+        {
+          "id":3,
+          "name": "Requisitos"
+        },
+        {
+          "id":4,
+          "name": "Beneficios"
+        },
+        {
+          "id":5,
+          "name": "Tienda"
+        }
+    ],
+    "socialMedia":[
+        {
+          "id":1,
+          "name": "instagram",
+          "img":"icon_instagram_white.svg"
+        },
+        {
+          "id":2,
+          "name": "twitter",
+          "img": "icon_twitter_white.svg"
+        },
+        {
+          "id":3,
+          "name": "whatsapp",
+          "img": "icon_whatsapp_white"
+        },
+        {
+          "id":4,
+          "name": "youtube",
+          "img": "icon_youtube_white"
+        }
+    ],
+    "userDetail":[
+        {
+          "id":1,
+          "name": "Julian",
+          "point":2311
+        },
+        {
+          "id":2,
+          "name": "Messi",
+          "point":10311
+        }
+    ]
+}

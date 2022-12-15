@@ -6,7 +6,9 @@ const Layout = ({children}) =>{
     <>     
       <Header/>
         <main className="h-full w-full absolute z-0">
-          {children}
+          <div className="my-24 w-full flex justify-center">
+            {children}
+          </div>
         </main>
       <Footer/>
       </> 
