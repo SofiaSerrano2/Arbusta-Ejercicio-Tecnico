@@ -3,12 +3,13 @@ import Footer from "../../component/public/Footer";
 
 const Layout = ({children}) =>{
     return(
-    <main>
+    <>     
       <Header/>
-        {children}
+        <main className="h-full w-full absolute z-0">
+          {children}
+        </main>
       <Footer/>
-    </main>
-
+      </> 
     )
 }
 
