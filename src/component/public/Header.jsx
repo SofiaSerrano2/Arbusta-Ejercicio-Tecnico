@@ -1,15 +1,15 @@
 
 const Header=()=>{
     return(
-      <header>
-            <img src='/assets/logo/logo_carrios_blue.png' alt="" />
-        <nav>
+      <header className="flex">
+            <img className="w-20 h-20" src='/assets/logo/logo_carrios_blue.png' alt="" />
+        <nav className="bg-blue flex">
         {/* Va a recorrer un json con los nombres de la página y su respectiva url */}
-          <p className='text-blue'>Home</p>
-          <p>Desafios</p>
-          <p>Requisitos</p>
-          <p>Beneficios</p>
-          <p>Tienda</p>
+          <button className='text-white'>Home</button>
+          <button>Desafios</button>
+          <button>Requisitos</button>
+          <button>Beneficios</button>
+          <button>Tienda</button>
         </nav>
       </header>
     )
