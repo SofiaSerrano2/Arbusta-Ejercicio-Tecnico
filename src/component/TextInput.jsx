@@ -1,0 +1,11 @@
+import { useState } from "react";
+
+const TextInput =()=>{
+    
+    return(
+      <>
+        
+      </>
+    )
+}
+export default TextInput;

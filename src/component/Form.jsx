@@ -4,6 +4,7 @@ const  Form=()=> {
         <>
             <h1>Datos Personales</h1>
             <form action="">
+                
             </form>
         </>
      );

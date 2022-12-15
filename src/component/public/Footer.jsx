@@ -5,15 +5,15 @@ const  Footer = ()=> {
       {/* Logo */}
       <img className="w-24 h-24 my-5 " src='/assets/logo/logo_carrios_blue.png' alt="" />
         {/* Pages */}
-      <div className='flex flex-wrap justify-center	'>
-        <p>Home</p>
-        <p>Desafios</p>
-        <p>Requisitos</p>
-        <p>Beneficios</p>
-        <p>Tienda</p>
+      <div className='flex flex-wrap justify-between w-96'>
+        <button className='text-white'>Home</button>
+        <button className='text-white'>Desafios</button>
+        <button className='text-white'>Requisitos</button>
+        <button className='text-white'>Beneficios</button>
+        <button className='text-white'>Tienda</button>
       </div>
       {/* Links */}
-      <div>
+      <div className="white">
         <p>Terminos y condiciones</p>
       </div>
         
