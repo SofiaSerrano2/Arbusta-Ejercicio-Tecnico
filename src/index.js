@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import userReducer from "./reducer/userReducer.js";
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux' ;
+
+
+const reducer = combineReducers({
+  user: userReducer,
+})
+const store = createStore(reducer);
+console.log("soy un estado")
+console.log(store.getState())
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

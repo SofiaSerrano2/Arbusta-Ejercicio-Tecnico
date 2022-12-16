@@ -47,11 +47,21 @@
         {
           "id":1,
           "name": "Julian",
+          "userName": "Alvarez",
+          "birth_date":"2000-02-02",
+          "email":"julianAlvarez@gmail.com",
+          "dni":"2003154",
+          "driving_license":true,
           "point":2311
         },
         {
           "id":2,
-          "name": "Messi",
+          "name": "Leonel",
+          "userName":"Messi",
+          "birth_date":"1992-02-02",
+          "email":"messi2022@gmail.com",
+          "dni":"1465265",
+          "driving_license":false,
           "point":10311
         }
     ]
