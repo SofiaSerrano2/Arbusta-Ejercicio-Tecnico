@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { createStore, combineReducers } from 'redux';
+import { Provider ,useSelector,useDispatch } from 'react-redux' ;
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import userReducer from "./reducer/userReducer.js";
-import { createStore, combineReducers } from 'redux';
-import { Provider ,useSelector } from 'react-redux' ;
-
+import userReducer  from "./reducer/userReducer";
 
 const reducer = combineReducers({
   user: userReducer,
 })
 const store = createStore(reducer);
-console.log(store.getState())
-
+// console.log(store.getState())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
