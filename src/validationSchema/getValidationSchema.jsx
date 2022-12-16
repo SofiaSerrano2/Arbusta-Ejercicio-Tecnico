@@ -1,10 +1,5 @@
 import * as Yup from 'yup';
-//npmbre
-//apellido 
-//fechaNacimiento
-//mail
-//dni
-//tenes licencia de conducir
+//Ver si se puede verificar que sea mayor de edad
 const today = new Date();
 
 
@@ -25,5 +20,5 @@ export const getValidationSchema = () => Yup.object().shape({
     dni: Yup.string()
     .matches(/^[0-9]\d{7,50}$/, 'Sólo números entre 8 y 50 dígitos')
     .required('Campo requerido'),
-    birthDate: Yup.date().nullable().min(new Date(1900, 0, 1)).max(today),
+    birthDate: Yup.date().nullable().min(new Date(1900, 0, 1),'La fecha de Nacimiento no puede ser menor de 1900').max(today,'Ingresar fecha de nacimiento valida'),
 })
