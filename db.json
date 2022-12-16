@@ -46,10 +46,10 @@
   "userDetail": [
     {
       "id": 1,
-      "name": "Daily meet",
-      "surname": "Serrano",
+      "name": "Julian",
+      "surname": "Alvarez",
       "birthDate": "2000-02-02",
-      "email": "sofiaSerrano@gmail.com",
+      "email": "Julian@gmail.com",
       "dni": "41232313",
       "drivingLicense": false,
       "point": 2311
