@@ -11,14 +11,14 @@ import DateInput from "../../component/Inputs/DateInput";
 import SelectedInput from "../../component/Inputs/SelectedInput";
 //me conviene hacer que se ejecute la función cuando salgo del input con el handleBlur
 //problemas para guardar fecha en el input
-const UserDetail = () =>{
+const UserDetail = ({userInfo}) =>{
   const dispatch = useDispatch()
   
   const user=useSelector(state => state.user)
 
   useEffect(() => {
       getserviceUserDetail().then(user=>dispatch(initlUserDetail(user)))
-    }, [])
+  }, [])
   
   const {
     handleChange,
@@ -30,10 +30,10 @@ const UserDetail = () =>{
   } = useFormik({
     initialValues: {
       name:user.name,
-      surname:user.surname,
+      surname:userInfo.surname,
       birthDate:'2000-01-02',
-      email:user.email,
-      dni:user.dni
+      email:userInfo.email,
+      dni:userInfo.dni
     },
     validationSchema: getValidationSchema(),
   })
@@ -72,7 +72,7 @@ const UserDetail = () =>{
           }
           onBlur={handleBlur}
           touched={touched.name}
-          values={values.name}
+          values={user.name}
           error={errors.name}
           required={true}
           />
@@ -116,7 +116,7 @@ const UserDetail = () =>{
           }             
           onBlur={handleBlur}
           touched={touched.email}
-          values={values.email}
+          values={user.email}
           error={errors.email}
           required={true}
 

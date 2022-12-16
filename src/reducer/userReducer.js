@@ -1,15 +1,6 @@
 
 
-const initialState = {
-  "id":2,
-  "name": "pepe",
-  "surname":"argento",
-  "birth_date":"1992-02-02",
-  "email":"pepe2022@gmail.com",
-  "dni":"1465265",
-  "driving_license":false,
-  "point":51616515
-}
+
 
 const userReducer = (state={},action ) =>{
   switch(action.type){
