@@ -32,6 +32,7 @@ const  Form=()=> {
 
   return ( 
       <>
+      {/*Modificar propiedad sin  */}
         <h1>Datos Personales</h1>
         <form action=""  onSubmit={editName}>
         <TextInput
@@ -44,6 +45,17 @@ const  Form=()=> {
           values={values.name}
           error={errors.name}
           />
+          <TextInput
+          label='Apellido'
+          name='surname'
+          placeholder={user.surName}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          touched={touched.surName}
+          values={values.surName}
+          error={errors.surName}
+          />
+
             <button type="submit">add</button>
           </form>
         </>
