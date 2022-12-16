@@ -10,14 +10,13 @@ import TextInput from './Inputs/TextInput'
 const  Form=({title,children})=> {
 
   return ( 
-      <>
+      <div className="flex flex-col">
       {/*Modificar propiedad sin  */}
-        <h1>{title}</h1>
-        <form action="" >
+        <h1 className="block">{title}</h1>
+        <form action="" className="grid gap-x-8 gap-y-4 grid-cols-2">
             {children}
-            <button type="submit">add</button>
-          </form>
-        </>
+        </form>
+      </div>
      );
 }
 
