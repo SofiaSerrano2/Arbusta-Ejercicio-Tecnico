@@ -1,23 +1,18 @@
-import { useDispatch ,useSelector} from 'react-redux'
-import { useEffect } from "react";
-import userReducer,{initlUserDetail} from '../../reducer/userReducer'
+import { useEffect,useContext } from "react";
 
-import serviceUserDetail from '../../service/userDetail'
-import UserDetail from "./UserDetail";
+import UserDetailForm from "./UserDetailForm";
 import Layout from "../../component/Layout";
-
+import Context, { UserContext, UserContextProvider } from "../../context/UserContext";
 const UserView = () =>{
-  const user=useSelector(state => state.user)
-  const dispatch = useDispatch();
 
     return(
-    <Layout>
-      <UserDetail/>
-    </Layout>
+      <UserContextProvider>
+        <Layout>
+        <UserDetailForm/>
+        </Layout>
+      </UserContextProvider>
+    
     )
 }
-
-   
-
 
 export default UserView;

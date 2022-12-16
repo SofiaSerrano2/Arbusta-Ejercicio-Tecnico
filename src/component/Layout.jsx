@@ -19,6 +19,7 @@ const Layout = ({children}) =>{
     .getSocialMedia()
     .then(socialMedia=>setArraySocialMedia(socialMedia))
   }, [])
+  
     return(
     <>     
       <Header arrayNavBar={arrayNavBar}/>

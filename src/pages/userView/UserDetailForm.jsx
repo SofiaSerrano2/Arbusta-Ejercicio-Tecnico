@@ -1,25 +1,25 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useFormik } from 'formik';
 import { useDispatch ,useSelector} from 'react-redux'
 
 import serviceUserDetail from "../../service/userDetail"
-import {editUserName,editUserSurname,editUsertBirthDate,editUserEmail,editUserDni,initlUserDetail} from '../../reducer/userReducer'
+// import {editUserName,editUserSurname,editUsertBirthDate,editUserEmail,editUserDni,initlUserDetail} from '../../reducer/userReducer'
 import { getValidationSchema } from '../../validationSchema/getValidationSchema';
 import Form from "../../component/Form";
 import TextInput from '../../component/Inputs/TextInput';
 import DateInput from "../../component/Inputs/DateInput";
 import SelectedInput from "../../component/Inputs/SelectedInput";
+import UserContext from "../../context/UserContext";
 //me conviene hacer que se ejecute la función cuando salgo del input con el handleBlur
 //problemas para guardar fecha en el input
-const UserDetail = () =>{
-  const dispatch = useDispatch()
-  
-  const user=useSelector(state => state.user)
+const UserDetailForm = () =>{
+  const {userDetail,setUserdetail}=useContext(UserContext);
 
   useEffect(() => {
-    serviceUserDetail.getserviceUserDetail().then(user=>dispatch(initlUserDetail(user)))
-    }, [])
-  
+    // serviceUserDetail.getserviceUserDetail().then(user=>setUserdetail(user));
+
+  }, [])
+
   const {
     handleChange,
     handleBlur,
@@ -29,35 +29,16 @@ const UserDetail = () =>{
     setFieldValue
   } = useFormik({
     initialValues: {
-      name:user.name,
-      surname:user.surname,
+      name:userDetail.name,
+      surname:'',
       birthDate:'2000-01-02',
-      email:user.email,
-      dni:user.dni
+      email:'',
+      dni:''
     },
     validationSchema: getValidationSchema(),
   })
 
   //poner funciones en carpeta aparte 
-  const editName = (input) => {
-    dispatch(editUserName(input));
-  }
-
-  const editSurname = (input) => {
-    dispatch(editUserSurname(input));
-  }
-  const edittBirthDate = (input) => {
-    dispatch(editUsertBirthDate(input));
-  }
-
-  const editEmail = (input) => {
-    dispatch(editUserEmail(input));
-  }
-
-  const editDni = (input) => {
-    dispatch(editUserDni(input));
-    serviceUserDetail.posterviceUserDetail(user)
-  }
 
     return(
     <>
@@ -67,7 +48,6 @@ const UserDetail = () =>{
           name='name'
           onChange={(e)=>{
             setFieldValue('name',e.target.value)
-            editName(e.target.value)
             }
           }
           onBlur={handleBlur}
@@ -81,7 +61,6 @@ const UserDetail = () =>{
           name='surname'
           onChange={(e)=>{
             setFieldValue('surname',e.target.value)
-            editSurname(e.target.value)
             }
           }          
           onBlur={handleBlur}
@@ -97,7 +76,6 @@ const UserDetail = () =>{
           onBlur={handleBlur}
           onChange={(e)=>{
             setFieldValue('birthDate',e.target.value)
-            edittBirthDate(e.target.value)
             }
           }   
           touched={touched.birthDate}
@@ -111,7 +89,6 @@ const UserDetail = () =>{
           name='email'
           onChange={(e)=>{
             setFieldValue('email',e.target.value)
-            editEmail(e.target.value)
             }
           }             
           onBlur={handleBlur}
@@ -126,7 +103,6 @@ const UserDetail = () =>{
           name='dni'
           onChange={(e)=>{
             setFieldValue('dni',e.target.value)
-            editDni(e.target.value)
             }
           }             
           onBlur={handleBlur}
@@ -146,4 +122,4 @@ const UserDetail = () =>{
     )
 }
 
-export default UserDetail;
+export default UserDetailForm;
