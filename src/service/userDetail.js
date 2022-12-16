@@ -10,11 +10,12 @@ const options = {
 
 
 
-const getserviceUserDetail =async  ()=>{
+export const getserviceUserDetail =async  ()=>{
 	try{
 		const response = await axios(baseUrl);
     let userDetail= response.data;
     console.log(userDetail);
+    console.log('Peticion');
     return userDetail;
   }
   catch{
@@ -22,10 +23,10 @@ const getserviceUserDetail =async  ()=>{
   }
 }
 
-const posterviceUserDetail =  (object)=>{
+export const putserviceUserDetail =  (object)=>{
+  const changeData={...object,name:object.name}
   try{
-    const request = axios.post("http://localhost:3001/userDetail/", object)
-  return request.then(response => response.data)
+    const request = axios.put(baseUrl, changeData).then(response => response.data)
   }
   catch{
     console.log('problema peticion');
@@ -33,4 +34,3 @@ const posterviceUserDetail =  (object)=>{
 }
 
 
-export default { getserviceUserDetail,posterviceUserDetail};

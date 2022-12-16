@@ -46,11 +46,11 @@
   "userDetail": [
     {
       "id": 1,
-      "name": "Julian",
+      "name": "Daily meet",
       "surname": "Alvarez",
       "birthDate": "2000-02-02",
-      "email": "julianAlvarez@gmail.com",
-      "dni": "2003154",
+      "email": "sofiaSerrano@gmail.com",
+      "dni": "4311099500",
       "drivingLicense": true,
       "point": 2311
     },
@@ -63,85 +63,6 @@
       "dni": "1465265",
       "drivingLicense": false,
       "point": 10311
-    },
-    {
-      "name": "Meet daily",
-      "surname": "6t8g",
-      "birthDate": "2000-01-07",
-      "email": "sofiaSerrano@gmail.co",
-      "id": 3
-    },
-    {
-      "name": "Meet daily",
-      "surname": "6t8g",
-      "birthDate": "2000-01-07",
-      "email": "sofiaSerrano@gmail.co",
-      "dni": "x",
-      "id": 4
-    },
-    {
-      "name": "Meet daily",
-      "surname": "6t8g",
-      "birthDate": "2000-01-07",
-      "email": "sofiaSerrano@gmail.co",
-      "dni": "xs",
-      "id": 5
-    },
-    {
-      "name": "Meet daily",
-      "surname": "6t8g",
-      "birthDate": "2000-01-07",
-      "email": "sofiaSerrano@gmail.co",
-      "dni": "xsx",
-      "id": 6
-    },
-    {
-      "name": "Meet daily",
-      "surname": "6t8g",
-      "birthDate": "2000-01-07",
-      "email": "sofiaSerrano@gmail.co",
-      "dni": "xsxx",
-      "id": 7
-    },
-    {
-      "name": "Meet daily",
-      "surname": "6t8g",
-      "birthDate": "2000-01-07",
-      "email": "sofiaSerrano@gmail.co",
-      "dni": "xsxxs",
-      "id": 8
-    },
-    {
-      "name": "Meet daily",
-      "surname": "6t8g",
-      "birthDate": "2000-01-07",
-      "email": "sofiaSerrano@gmail.co",
-      "dni": "xsxx",
-      "id": 9
-    },
-    {
-      "name": "Meet daily",
-      "surname": "6t8g",
-      "birthDate": "2000-01-07",
-      "email": "sofiaSerrano@gmail.co",
-      "dni": "xsx",
-      "id": 10
-    },
-    {
-      "name": "Meet daily",
-      "surname": "6t8g",
-      "birthDate": "2000-01-07",
-      "email": "sofiaSerrano@gmail.co",
-      "dni": "xs",
-      "id": 11
-    },
-    {
-      "name": "Meet daily",
-      "surname": "6t8g",
-      "birthDate": "2000-01-07",
-      "email": "sofiaSerrano@gmail.co",
-      "dni": "x",
-      "id": 12
     }
   ]
 }

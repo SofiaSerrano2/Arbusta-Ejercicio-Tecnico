@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useFormik } from 'formik';
 import { useDispatch ,useSelector} from 'react-redux'
 
-import serviceUserDetail from "../../service/userDetail"
+import {getserviceUserDetail,putserviceUserDetail} from "../../service/userDetail"
 import {editUserName,editUserSurname,editUsertBirthDate,editUserEmail,editUserDni,initlUserDetail} from '../../reducer/userReducer'
 import { getValidationSchema } from '../../validationSchema/getValidationSchema';
 import Form from "../../component/Form";
@@ -17,7 +17,7 @@ const UserDetail = () =>{
   const user=useSelector(state => state.user)
 
   useEffect(() => {
-    serviceUserDetail.getserviceUserDetail().then(user=>dispatch(initlUserDetail(user)))
+      getserviceUserDetail().then(user=>dispatch(initlUserDetail(user)))
     }, [])
   
   const {
@@ -56,7 +56,7 @@ const UserDetail = () =>{
 
   const editDni = (input) => {
     dispatch(editUserDni(input));
-    serviceUserDetail.posterviceUserDetail(user)
+    putserviceUserDetail(user)
   }
 
     return(
