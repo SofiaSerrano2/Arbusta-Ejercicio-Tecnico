@@ -11,14 +11,10 @@ import DateInput from "../../component/Inputs/DateInput";
 //me conviene hacer que se ejecute la función cuando salgo del input con el handleBlur
 //problemas para guardar fecha en el input
 const UserDetail = () =>{
-  useEffect(() => {
-    serviceUserDetail
-    .getserviceUserDetail()
-    .then(userDetail=>console.log(userDetail))
-  }, [])
   const dispatch = useDispatch()
-
+  
   const user=useSelector(state => state.user)
+
   const {
     handleChange,
     handleBlur,
@@ -44,7 +40,7 @@ const UserDetail = () =>{
   const editSurname = (input) => {
     dispatch(editUserSurname(input));
   }
-
+ 
     return(
     <>
       <Form title={'Datos personales'}>

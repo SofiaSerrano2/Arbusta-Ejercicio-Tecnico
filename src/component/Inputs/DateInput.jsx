@@ -1,5 +1,4 @@
 const DateInput =({label,errorPost = null,error=null,touched,...props})=>{
-  console.log(props.values);
   return(
     <div className='flex flex-col gap-1 tablet:grow tablet:max-w-[320px] mb-8'>
       <label htmlFor="">

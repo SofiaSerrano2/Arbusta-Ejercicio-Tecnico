@@ -47,7 +47,7 @@
         {
           "id":1,
           "name": "Julian",
-          "surName": "Alvarez",
+          "surname": "Alvarez",
           "birthDate":"2000-02-02",
           "email":"julianAlvarez@gmail.com",
           "dni":"2003154",
@@ -57,7 +57,7 @@
         {
           "id":2,
           "name": "Leonel",
-          "surName":"Messi",
+          "surname":"Messi",
           "birthDate":"1992-02-02",
           "email":"messi2022@gmail.com",
           "dni":"1465265",

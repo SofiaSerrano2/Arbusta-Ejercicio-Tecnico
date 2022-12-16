@@ -1,17 +1,24 @@
-const initialState = {
-  "id":2,
-  "name": "Leonel",
-  "surname":"Messi",
-  "birth_date":"1992-02-02",
-  "email":"messi2022@gmail.com",
-  "dni":"1465265",
-  "driving_license":false,
-  "point":103118237387787
-}
+// const initialState = {
+//   "id":2,
+//   "name": "Leonel",
+//   "surname":"Messi",
+//   "birth_date":"1992-02-02",
+//   "email":"messi2022@gmail.com",
+//   "dni":"1465265",
+//   "driving_license":false,
+//   "point":103118237387787
+// }
 
 
-const userReducer = (state=initialState,action ) =>{
+const userReducer = (state=[],action ) =>{
   switch(action.type){
+    case 'INIT_USER':{
+      const initInfoUser=action.data;
+      const changeInfoUser = initInfoUser;
+      console.log(changeInfoUser);
+
+      return changeInfoUser;
+    }
     case 'EDIT_NAME': 
         {
           const newInfoUser= action.data.name;
@@ -49,7 +56,7 @@ const userReducer = (state=initialState,action ) =>{
   }
 }
 
-export const initialUserDetail = (detail) => {
+export const initlUserDetail = (detail) => {
   return {
     type: 'INIT_USER',
     data: detail,

@@ -6,4 +6,9 @@ const getserviceUserDetail = ()=>{
 	return request.then(response => response.data);
 }
 
+const changeServiceDetail=()=>{
+	const request = axios.put(baseUrl);
+	
+}
+
 export default { getserviceUserDetail};
