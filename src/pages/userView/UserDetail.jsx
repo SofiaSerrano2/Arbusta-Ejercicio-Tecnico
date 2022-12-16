@@ -8,7 +8,7 @@ import { getValidationSchema } from '../../validationSchema/getValidationSchema'
 import Form from "../../component/Form";
 import TextInput from '../../component/Inputs/TextInput';
 import DateInput from "../../component/Inputs/DateInput";
-
+//me conviene hacer que se ejecute la función cuando salgo del input con el handleBlur
 const UserDetail = () =>{
   useEffect(() => {
     serviceUserDetail
@@ -24,18 +24,18 @@ const UserDetail = () =>{
     handleBlur,
     errors,
     values,
-    touched
+    touched,
+    setFieldValue
   } = useFormik({
     initialValues: {
       name: '',
     },
-    validationSchema: getValidationSchema()
+    validationSchema: getValidationSchema(),
+
   })
 
-  const editName = (event) => {
-    event.preventDefault();
-    const content = event.target.name.value;
-    dispatch(editUserName(content));
+  const editName = (input) => {
+    dispatch(editUserName(input));
   }
     return(
     <>
@@ -44,7 +44,12 @@ const UserDetail = () =>{
           label='Nombre'
           name='name'
           placeholder={user.name}
-          onChange={handleChange}
+          onChange={(e)=>{
+            console.log(e.target.name.value)
+            setFieldValue('name',e.target.value)
+            editName(e.target.value)
+          }
+          }
           onBlur={handleBlur}
           touched={touched.name}
           values={values.name}
@@ -63,7 +68,6 @@ const UserDetail = () =>{
           <DateInput 
           label='Fecha de Nacimiento'
           name='birthDate'
-          onChange={handleChange}
           onBlur={handleBlur}
           touched={touched.birthDate}
           values={values.birthDate}
