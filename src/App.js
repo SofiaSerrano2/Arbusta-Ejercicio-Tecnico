@@ -6,10 +6,10 @@ import { useEffect } from "react";
 import userReducer,{initlUserDetail} from './reducer/userReducer'
 import serviceUserDetail from './service/userDetail'
 function App() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    serviceUserDetail.getserviceUserDetail().then(user => dispatch(initlUserDetail(user)))
-  }, [])
+  // const dispatch = useDispatch()
+  // useEffect(() => {
+  //   serviceUserDetail.getserviceUserDetail().then(user => dispatch(initlUserDetail(user)))
+  // }, [])
   return (
       <>
         <UserView/>

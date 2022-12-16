@@ -1,22 +1,22 @@
-// const initialState = {
-//   "id":2,
-//   "name": "Leonel",
-//   "surname":"Messi",
-//   "birth_date":"1992-02-02",
-//   "email":"messi2022@gmail.com",
-//   "dni":"1465265",
-//   "driving_license":false,
-//   "point":103118237387787
-// }
 
 
-const userReducer = (state=[],action ) =>{
+const initialState = {
+  "id":2,
+  "name": "pepe",
+  "surname":"argento",
+  "birth_date":"1992-02-02",
+  "email":"pepe2022@gmail.com",
+  "dni":"1465265",
+  "driving_license":false,
+  "point":51616515
+}
+
+const userReducer = (state={},action ) =>{
   switch(action.type){
     case 'INIT_USER':{
       const initInfoUser=action.data;
-      const changeInfoUser = initInfoUser;
-      console.log(changeInfoUser);
-
+      console.log(action.data);
+      const changeInfoUser=initInfoUser
       return changeInfoUser;
     }
     case 'EDIT_NAME': 
@@ -51,6 +51,11 @@ const userReducer = (state=[],action ) =>{
           console.log(changeInfoUser);
           return changeInfoUser;
         }
+        case 'EDIT_LICENSE':{
+          const newInfoUser= action.data.license;
+          const changeInfoUser={...state,license:newInfoUser}
+          return changeInfoUser;
+        }
       default:
         return state
   }
@@ -58,9 +63,11 @@ const userReducer = (state=[],action ) =>{
 
 export const initlUserDetail = (detail) => {
   return {
-    type: 'INIT_USER',
-    data: detail,
+      type: 'INIT_USER',
+      data: detail,
+    
   }
+
 }
 
 export const editUserName = (name) => {

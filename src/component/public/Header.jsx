@@ -8,7 +8,7 @@ const Header=({arrayNavBar})=>{
           {
            arrayNavBar!=null && 
            arrayNavBar.map((navBar)=>(
-            <button  className='text-white'>{navBar.name}</button>
+            <button  className='text-white' onClick={()=>{console.log(navBar.name)}}>{navBar.name}</button>
           ))
         }
         </nav>

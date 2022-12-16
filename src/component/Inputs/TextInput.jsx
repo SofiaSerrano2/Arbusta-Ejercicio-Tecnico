@@ -4,13 +4,19 @@ function TextInput({
   error=null,
   label,
   touched,
+  required,
   ...props
 }) {
   return (
-    <div className='flex flex-col gap-1 tablet:grow tablet:max-w-[320px] mb-8'>
-      <label htmlFor={props.name} className='text-sm'>
-        {label}
-      </label>
+    <div className='flex flex-col gap-1 tablet:grow tablet:max-w-[320px] mb-2'>
+      <div className="flex">
+        <label htmlFor={props.name} className='text-sm'>
+          {label}
+        </label>
+        {required===true
+         && <p className="text-red-500"> *</p>
+        }
+      </div>
       <input
         className={`w-full tablet:max-w-[320px] p-2 h-10 rounded-lg border-2 ${
           (error || errorPost) && touched ? 'border-red-500' : ''

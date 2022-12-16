@@ -2,7 +2,6 @@ import * as Yup from 'yup';
 //Ver si se puede verificar que sea mayor de edad
 const today = new Date();
 
-
 export const getValidationSchema = () => Yup.object().shape({
     name: Yup.string('Campo inválido')
     .min(2,'Entre 2 y 500 caracteres')

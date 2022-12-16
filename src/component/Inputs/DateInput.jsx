@@ -1,7 +1,7 @@
 const DateInput =({label,errorPost = null,error=null,touched,...props})=>{
   return(
     <div className='flex flex-col gap-1 tablet:grow tablet:max-w-[320px] mb-8'>
-      <label htmlFor="">
+      <label htmlFor={props.name} className='text-sm'>
         {label}
       </label>
       <input
@@ -12,7 +12,6 @@ const DateInput =({label,errorPost = null,error=null,touched,...props})=>{
         defaultValue={props.values}
         type='date'
         pattern="\d{4}-\d{2}-\d{2}"
-        // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       />
       {error && touched ? (
