@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import userReducer,{initlUserDetail} from '../../reducer/userReducer'
 import serviceUserDetail, { getserviceUserDetail } from '../../service/userDetail'
 import UserDetail from "./UserDetail";
-import Layout from "../../component/Layout";
+import Layout from "../../component/private/Layout";
 
 const UserView = () =>{
   const user=useSelector(state => state.user)

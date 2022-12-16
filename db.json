@@ -47,11 +47,11 @@
     {
       "id": 1,
       "name": "Daily meet",
-      "surname": "Alvarez",
+      "surname": "Serrano",
       "birthDate": "2000-02-02",
       "email": "sofiaSerrano@gmail.com",
-      "dni": "43423",
-      "drivingLicense": true,
+      "dni": "41232313",
+      "drivingLicense": false,
       "point": 2311
     },
     {

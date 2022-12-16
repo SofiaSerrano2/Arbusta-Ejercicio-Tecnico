@@ -8,8 +8,19 @@ const SelectedInput = ({label,...props})=>{
       </div>
     
     <select name="select" className="w-full tablet:max-w-[320px] p-2 h-10 rounded-lg border-2">
-      <option value={true}>Si</option>
-      <option defaultValue={false} selected>No</option>
+      {
+        props.values === true 
+        ?  <>
+        <option defaultvalue={true}>Si</option>
+        <option value={false}>No</option>
+
+        </>
+
+        : <>
+          <option value={true}>Si</option>
+          <option defaultvalue={false}>No</option>
+        </>
+      }
     </select>
     </div>
   )

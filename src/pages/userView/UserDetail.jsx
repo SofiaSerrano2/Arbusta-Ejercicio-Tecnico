@@ -5,7 +5,7 @@ import { useDispatch ,useSelector} from 'react-redux'
 import {getserviceUserDetail,putserviceUserDetail} from "../../service/userDetail"
 import {editUserName,editUserSurname,editUsertBirthDate,editUserEmail,editUserDni,initlUserDetail} from '../../reducer/userReducer'
 import { getValidationSchema } from '../../validationSchema/getValidationSchema';
-import Form from "../../component/Form";
+import Form from "../../component/private/Form";
 import TextInput from '../../component/Inputs/TextInput';
 import DateInput from "../../component/Inputs/DateInput";
 import SelectedInput from "../../component/Inputs/SelectedInput";
@@ -16,9 +16,9 @@ const UserDetail = ({userInfo}) =>{
   
   const user=useSelector(state => state.user)
 
-  useEffect(() => {
-      getserviceUserDetail().then(user=>dispatch(initlUserDetail(user)))
-  }, [])
+  // useEffect(() => {
+  //     getserviceUserDetail().then(user=>dispatch(initlUserDetail(user)))
+  // }, [])
   
   const {
     handleChange,
@@ -33,7 +33,8 @@ const UserDetail = ({userInfo}) =>{
       surname:userInfo.surname,
       birthDate:'2000-01-02',
       email:userInfo.email,
-      dni:userInfo.dni
+      dni:userInfo.dni,
+      drivingLicense:false
     },
     validationSchema: getValidationSchema(),
   })
@@ -86,7 +87,7 @@ const UserDetail = ({userInfo}) =>{
           }          
           onBlur={handleBlur}
           touched={touched.surname}
-          values={values.surname}
+          values={user.surname}
           error={errors.surname}
           required={true}
 
@@ -131,7 +132,7 @@ const UserDetail = ({userInfo}) =>{
           }             
           onBlur={handleBlur}
           touched={touched.dni}
-          values={values.dni}
+          values={user.dni}
           error={errors.dni}
           required={true}
           />
@@ -140,6 +141,8 @@ const UserDetail = ({userInfo}) =>{
             name='licencia'
             onChange={handleChange}
             onBlur={handleBlur}
+            values={user.drivingLicense}
+
           />
       </Form>
     </>

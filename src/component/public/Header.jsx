@@ -1,5 +1,6 @@
+import UserInfoHeader from "../private/UserInfoHeader";
 
-const Header=({arrayNavBar})=>{
+const Header=({arrayNavBar,data})=>{
     return(
       <header className="bg-blue_bg absolute z-10 inset-x-0 top-0 w-full flex justify-between items-center">
         <img className=" w-16 h-16 my-2" src='/assets/logo/logo_carrios_blue.png' alt="" />
@@ -12,6 +13,7 @@ const Header=({arrayNavBar})=>{
           ))
         }
         </nav>
+        <UserInfoHeader data={data.point}/>
       </header>
     )
    
