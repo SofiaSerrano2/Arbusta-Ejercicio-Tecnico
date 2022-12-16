@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 function TextInput({
   errorPost = null,
@@ -17,8 +16,7 @@ function TextInput({
           (error || errorPost) && touched ? 'border-red-500' : ''
         } ${!error && touched ? 'bg-inputbackground' : ''} focus:outline-green`}
         onChange={props.onChange}
-        values={props.values}
-        // eslint-disable-next-line react/jsx-props-no-spreading
+        defaultValue={props.values}
         {...props}
       />
       {error && touched ? (

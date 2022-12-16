@@ -1,4 +1,5 @@
 const DateInput =({label,errorPost = null,error=null,touched,...props})=>{
+  console.log(props.values);
   return(
     <div className='flex flex-col gap-1 tablet:grow tablet:max-w-[320px] mb-8'>
       <label htmlFor="">
@@ -9,8 +10,9 @@ const DateInput =({label,errorPost = null,error=null,touched,...props})=>{
           (error || errorPost) && touched ? 'border-red-500' : ''
         } ${!error && touched ? 'bg-inputbackground' : ''} focus:outline-green`}
         onChange={props.onChange}
-        values={props.values}
+        defaultValue={props.values}
         type='date'
+        pattern="\d{4}-\d{2}-\d{2}"
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       />

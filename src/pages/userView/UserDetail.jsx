@@ -3,12 +3,13 @@ import { useFormik } from 'formik';
 import { useDispatch ,useSelector} from 'react-redux'
 
 import serviceUserDetail from "../../service/userDetail"
-import {editUserName} from '../../reducer/userReducer'
+import {editUserName,editUserSurname,editUsertBirthDate,editUserEmail,editUserDni} from '../../reducer/userReducer'
 import { getValidationSchema } from '../../validationSchema/getValidationSchema';
 import Form from "../../component/Form";
 import TextInput from '../../component/Inputs/TextInput';
 import DateInput from "../../component/Inputs/DateInput";
 //me conviene hacer que se ejecute la función cuando salgo del input con el handleBlur
+//problemas para guardar fecha en el input
 const UserDetail = () =>{
   useEffect(() => {
     serviceUserDetail
@@ -16,10 +17,9 @@ const UserDetail = () =>{
     .then(userDetail=>console.log(userDetail))
   }, [])
   const dispatch = useDispatch()
-  const user=useSelector(state => state.user)
 
+  const user=useSelector(state => state.user)
   const {
-    handleSubmit,
     handleChange,
     handleBlur,
     errors,
@@ -28,27 +28,34 @@ const UserDetail = () =>{
     setFieldValue
   } = useFormik({
     initialValues: {
-      name: '',
+      name:user.name,
+      surname:user.surname,
+      birthDate:'2000-01-02',
+      email:user.email,
+      dni:user.dni
     },
     validationSchema: getValidationSchema(),
-
   })
 
   const editName = (input) => {
     dispatch(editUserName(input));
   }
+
+  const editSurname = (input) => {
+    dispatch(editUserSurname(input));
+  }
+
     return(
     <>
       <Form title={'Datos personales'}>
       <TextInput
           label='Nombre'
           name='name'
-          placeholder={user.name}
           onChange={(e)=>{
             console.log(e.target.name.value)
             setFieldValue('name',e.target.value)
             editName(e.target.value)
-          }
+            }
           }
           onBlur={handleBlur}
           touched={touched.name}
@@ -58,9 +65,12 @@ const UserDetail = () =>{
           <TextInput
           label='Apellido'
           name='surname'
-          placeholder={user.surname}
-          onChange={handleChange}
-          onBlur={handleBlur}
+          onChange={(e)=>{
+            console.log(e.target.value)
+            setFieldValue('surname',e.target.value)
+            editSurname(e.target.value)
+            }
+          }          onBlur={handleBlur}
           touched={touched.surname}
           values={values.surname}
           error={errors.surname}
@@ -76,7 +86,6 @@ const UserDetail = () =>{
           <TextInput
           label='E-mail'
           name='email'
-          placeholder={user.email}
           onChange={handleChange}
           onBlur={handleBlur}
           touched={touched.email}
@@ -86,7 +95,6 @@ const UserDetail = () =>{
           <TextInput
           label='DNI'
           name='dni'
-          placeholder={user.dni}
           onChange={handleChange}
           onBlur={handleBlur}
           touched={touched.dni}
