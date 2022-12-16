@@ -10,20 +10,32 @@ const initialState = {
 }
 
 
-const userReducer = (state=initialState ) =>{
-  return state;
+const userReducer = (state=initialState,action ) =>{
+  switch(action.type){
+    case 'EDIT_NAME': 
+        {
+          const newInfoUser= action.data.name;
+          console.log(action.data.name);
+          const changeInfoUser={...state,name:newInfoUser}
+          console.log(changeInfoUser);
+          return changeInfoUser;
+        }
+      
+      default:
+        return state
+  }
 }
 
-export const editUserName = (state=initialState,content) => {
+export const editUserName = (name) => {
   return {
     type: 'EDIT_NAME',
     data: {
-      content
+      name
     }
   }
 }
 
-export const initialUserDetail = (state=initialState,detail) => {
+export const initialUserDetail = (detail) => {
   return {
     type: 'INIT_USER',
     data: detail,

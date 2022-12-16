@@ -1,29 +1,24 @@
 import { useEffect } from "react";
-// import { useDispatch } from 'react-redux'
-
+import { useDispatch ,useSelector} from 'react-redux'
+import {editUserName} from '../reducer/userReducer'
 import serviceUserDetail from '../service/userDetail'
 
 //viendo si me conviene hacerlo Componente o ponerlo directamente en la página
 const  Form=()=> {
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  const user=useSelector(state => state.user)
 
-
-  // const editName = (event) => {
-  //   event.preventDefault()
-  //   const content = event.target.note.value
-  //   event.target.note.value = ''
-  //   dispatch(editUserName(content))
-  // }
-  // useEffect(()=>{
-  //   serviceUserDetail.getserviceUserDetail.then((detail)=>
-  //     store.dispatch
-  //   )
-  // },[])
+  const editName = (event) => {
+    event.preventDefault();
+    const content = event.target.name.value;
+    dispatch(editUserName(content));
+  }
+  
   return ( 
       <>
         <h1>Datos Personales</h1>
-        <form action="" >
-            <input name="name" />
+        <form action=""  onSubmit={editName}>
+            <input name="name" type='text'/>
             <button type="submit">add</button>
           </form>
         </>
